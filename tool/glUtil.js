@@ -4,18 +4,14 @@
 let getGL = function (canvas) {
     return canvas.getContext('webgl')
 }
-/**
- * 
- * @param {context对象} gl 
- * @param {r} r 
- * @param {g} g 
- * @param {b} b 
- * @param {a} a 
- */
-let clearScreen = function (gl, r, g, b, a) {
-    gl.clearColor(r, g, b, a)
+let setBgColor=function(gl,r,g,b,a){
+    gl.clearColor(r, g, b, a);
+    clearScreen(gl)
+}
+let clearScreen = function (gl) {
     gl.clear(gl.COLOR_BUFFER_BIT)
 }
+
 /**
  * 创建并编译shader
  * @param {上下文对象} gl  

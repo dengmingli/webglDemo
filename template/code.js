@@ -44,6 +44,7 @@ let fragCode =
 let main = function () {
     //获取webgl的上下文对象
     let gl = createGl();
+    setBgColor(gl, 1.0, 1.0, 1.0, 1.0,)
     //创建并编译着色器对象
     gl.program = createAndComPileShader(gl, vertCode, fragCode)
     //获取并修改glsl中的数据
@@ -54,7 +55,7 @@ let main = function () {
     let fragColor = gl.getUniformLocation(gl.program, 'fragColor');
     gl.uniform4f(fragColor, 1.0, 0.0, 0.0, 1.0);
     //绘制图形
-    clearScreen(gl, 1.0, 1.0, 1.0, 1.0)
+    clearScreen(gl)
     gl.drawArrays(gl.POINTS, 0, 1);
 }
 window.onload = function () {
